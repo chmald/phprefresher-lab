@@ -33,6 +33,10 @@ try {
 
 // Startup Script (apache headers)
 echo "<h2>Apache Headers</h2>";
-$modules = apache_get_modules();
-echo $modules["mod_headers"];
+$in_array = in_array("mod_headers", apache_get_modules());
+echo "mod_headers enabled: ";
+if($in_array)
+    echo "<b>true</b><br/>";
+else
+    echo "<b>false</b><br/>";
 ?>
