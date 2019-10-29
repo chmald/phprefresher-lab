@@ -33,5 +33,6 @@ try {
 
 // Startup Script (apache headers)
 echo "<h2>Apache Headers</h2>";
-print_r(apache_get_modules());
+$modules = apache_get_modules();
+echo $modules["mod_headers"];
 ?>
