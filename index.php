@@ -25,7 +25,7 @@ else
 // Module Install
 echo "<h2>Module Install</h2>";
 try {
-    $im = ssh2_connect("localhost", 22);
+    //$im = ssh2_connect("localhost", 22);
     echo "SSH2 Module installed.";
 } catch (Exception $e) {
     echo "SSH2 Module is not installed.";
