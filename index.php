@@ -2,6 +2,11 @@
 // Config Change
 echo "<h2>Config Settings</h2>";
 // System Change
+echo "expose_php: ";
+if (ini_get("expose_php"))
+    echo "<b>true</b><br/>";
+else
+    echo "<b>false</b><br/>";
 
 // App Change
 echo "post_max_size > 8M: ";
@@ -23,18 +28,12 @@ else
     echo "<b>false</b><br/>";
 
 // Module Install
-echo "<h2>Module Install</h2>";
-try {
-    //$im = ssh2_connect("localhost", 22);
-    echo "SSH2 Module installed.";
-} catch (Exception $e) {
-    echo "SSH2 Module is not installed.";
-}
+
 
 // Startup Script (apache headers)
-echo "<h2>Apache Headers</h2>";
-$in_array = in_array("mod_headers", apache_get_modules());
-echo "mod_headers enabled: ";
+echo "<h2>Apache Proxy</h2>";
+$in_array = in_array("mod_proxy", apache_get_modules());
+echo "mod_proxy enabled: ";
 if($in_array)
     echo "<b>true</b><br/>";
 else
