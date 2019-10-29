@@ -27,9 +27,6 @@ if (ini_get("upload_max_filesize")>2)
 else
     echo "<b>false</b><br/>";
 
-// Module Install
-
-
 // Startup Script (apache headers)
 echo "<h2>Apache Proxy</h2>";
 $in_array = in_array("mod_proxy", apache_get_modules());
